@@ -2,7 +2,6 @@ joblib
 numpy
 pandas
 nltk
-punkt
 gunicorn
 Flask
 scikit-learn==1.2.2
