@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://www.ninestarsglobal.com/wp-content/uploads/2019/12/sentiment-analysis-header-Image.jpg");
+            background-repeat: no-repeat ;
+            background-size: cover;
+             background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        @keyframes moveEmoji {
+            0% {
+                transform: translateY(100%);
+                font-size: 24px;
+            }
+            100% {
+                transform: translateY(-100%);
+                font-size: 48px;
+            }
+        }
+
+        .emoji-container {
+            position: absolute;
+            left: 10%;
+            top: 100%;
+            transform: translateX(-50%);
+            animation: moveEmoji 8s linear infinite;
+        }
+        .emoji {
+            font-size: 24px;
+            animation: moveEmoji 8s ease-in 0s 10 alternate both;
+        }
+
+        h1 {
+            color:greenyellow;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        form {
+            background-color: rgb(222, 222, 247);
+            padding-top: 30px;
+            padding-right: 60px;
+            padding-bottom: 10px;
+            padding-left: 40px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 30px;
+            border: 8px solid #7ea5b1;
+            box-shadow: 0 0 10px rgba(118, 212, 204, 0.795);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            border: 6px solid #189397;
+            background-color:ghostwhite;
+            border-radius: 13px;
+            padding: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #b2e2e2;
+            padding: 10px 20px;
+            border:chartreuse;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            color:goldenrod;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            color:palegoldenrod;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="emoji-container">
+        <div class="emoji">
+            
+            😃
+        </div>
+        <div class="emoji">  😃 😃</div>
+        <div class="emoji">😃 <br>  😃   😃</div>
+        <div class="emoji">😃</div>
+        <div class="emoji">    😃<br>😃</div>
+        <div class="emoji">😃 😃<br>😃 😃</div>
+        <div class="emoji">   😃</div>
+        <div class="emoji">😃😃 😃😃</div>
+        <div class="emoji">    😃   😃</div>
+        <div class="emoji">😃</div>
+        <div class="emoji">   😃   😃</div>
+        <div class="emoji">😃</div>
+        <div class="emoji">   😃   😃😃  😃</div>
+        <div class="emoji">  😃  😃</div>
+        <div class="emoji"> 😃</div>
+
+    </div>
+
+    <h1>Sentiment Analysis</h1>
+    <form action="/predict" method="post">
+        <label for="review">Enter a review:</label><br>
+        <br>
+        <textarea name="review" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+    <h2>Result</h2>
+    <p>The sentiment of the review is:</p><h1> {{ prediction }}</h1>
+    {% endif %}
+    
+</body>
+</html>
+
+
