@@ -8,8 +8,8 @@ from nltk.corpus import stopwords
 app = Flask(__name__)
 
 # Load the TF-IDF vectorizer and the trained Decision Tree model
-vectorizer = joblib.load('tfidf_vectorizer (1).pkl')
-model = joblib.load('decision_tree (1).pkl')
+vectorizer = joblib.load('tfidf_vectorizer.pkl')
+model = joblib.load('decision_tree.pkl')
 
 # Define the preprocess_text function
 def preprocess_text(text_data):
